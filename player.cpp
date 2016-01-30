@@ -3,6 +3,8 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include "enemy.h"
+#include <QDebug>
+
 
 Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 {
@@ -26,12 +28,22 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet();
         bullet->setPos(x() + this->pixmap().width()/2, y());
         this->scene()->addItem(bullet);
-        if (bulletsound->state() == QMediaPlayer::PlayingState){
-            bulletsound->setPosition(0);
-        }
-        else if (bulletsound->state() == QMediaPlayer::StoppedState){
+
+
+
+
+//        if (bulletsound->state() == QMediaPlayer::PlayingState){
+
+        if (bulletsound->state() == QMediaPlayer::StoppedState){
+            qDebug() << "attempted to play bulletsound from stopped state" << bulletsound->state() << bulletsound->error() << bulletsound->mediaStatus();
             bulletsound->play();
         }
+        else
+        {
+            qDebug() << "attempted to play bulletsound otherwise " << bulletsound->state() << bulletsound->error() << bulletsound->mediaStatus();
+            bulletsound->stop();
+        }
+
     }
 }
 

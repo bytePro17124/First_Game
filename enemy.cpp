@@ -7,7 +7,7 @@
 
 extern Game * game;
 
-Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
+Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
     int random_number = rand() % 720;
     setPos(random_number,0);
