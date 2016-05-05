@@ -7,7 +7,8 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 
     setPlainText("Health: " + QString::number(health));
     setDefaultTextColor(Qt::red);
-    setFont(QFont("times",16));
+    setFont(QFont("Monospace", 12));
+
 
 }
 
@@ -15,7 +16,11 @@ Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent)
 void Health::decrease()
 {
     health--;
-    setPlainText("Health: " + QString::number(health));
+    if (health > 0) {
+     setPlainText("Health: " + QString::number(health));
+    } else {
+        setPlainText("You Have NO HP! Game Over!");
+    }
 }
 
 int Health::getHealth()

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/bgmusic">
+        <file>PowerPunch_80-1.wav</file>
+    </qresource>
+</RCC>

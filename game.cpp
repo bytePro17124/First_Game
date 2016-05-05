@@ -10,9 +10,9 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
 {
     scene = new QGraphicsScene();
     setScene(scene);
-    setFixedSize(810,605);
-    scene->setSceneRect(0,0,800,600);
-    setBackgroundBrush(QBrush(QImage(":/images/background.png")));
+    setFixedSize(1210,905);
+    scene->setSceneRect(0,0,1200,900);
+    setBackgroundBrush(QBrush(QImage(":/images/background1.png")));
 
     player = new Player();
 
@@ -23,7 +23,7 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
     scene->addItem(score);
 
     health = new Health();
-    health->setPos(health->x(), health->y()+25);
+    health->setPos(health->x(), health->y()+35);
     scene->addItem(health);
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -41,11 +41,12 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
 
     QMediaPlaylist * bgmusiclist = new QMediaPlaylist;
     bgmusiclist->setPlaybackMode(QMediaPlaylist::Loop);
-    bgmusiclist->addMedia(QUrl("qrc:sounds/bgmusic.wav"));
+    bgmusiclist->addMedia(QUrl("qrc:bgmusic/PowerPunch_80-1.wav"));
     bgmusiclist->setCurrentIndex(1);
 
     QMediaPlayer * music = new QMediaPlayer();
     music->setPlaylist(bgmusiclist);
+    music->setVolume(90);
     music->play();
 
 }

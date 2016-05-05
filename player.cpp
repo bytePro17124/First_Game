@@ -9,7 +9,7 @@
 Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 {
     bulletsound = new QMediaPlayer();
-    bulletsound->setMedia(QUrl("qrc:sounds/turret.wav"));
+    bulletsound->setMedia(QUrl("qrc:soundeffects/shot1-1.wav"));
 
     setPixmap(QPixmap(":/images/turret.png"));
 }
@@ -17,11 +17,11 @@ Player::Player(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_A || event->key() == Qt::Key_Left) {
-        if (this->pos().x() > 10)
+        if (this->pos().x() > 25)
             this->setPos(x()-20, y());
     }
     else if (event->key() == Qt::Key_D || event->key() == Qt::Key_Right) {
-        if (this->pos().x() + this->pixmap().width() < 785)
+        if (this->pos().x() + this->pixmap().width() < 1175)
             this->setPos(x()+20, y());
     }
     else if (event->key() == Qt::Key_Space) {

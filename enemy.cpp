@@ -9,7 +9,7 @@ extern Game * game;
 
 Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
-    int random_number = rand() % 720;
+    int random_number = rand() % 1120;
     setPos(random_number,0);
 
     setPixmap(QPixmap(":/images/baddie.png"));
@@ -21,7 +21,6 @@ Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 
 void Enemy::move()
 {
-
     setPos(x(), y()+5);
     if (this->pos().y() > scene()->height() ) {
         game->health->decrease();

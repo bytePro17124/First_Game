@@ -1,12 +1,15 @@
 <RCC>
-    <qresource prefix="/sounds">
-        <file>bgmusic.wav</file>
-        <file>turret.wav</file>
+    <qresource prefix="/bgmusic">
+        <file>PowerPunch_80-1.wav</file>
     </qresource>
     <qresource prefix="/images">
-        <file>background.png</file>
         <file>baddie.png</file>
         <file>bullet.png</file>
         <file>turret.png</file>
+        <file>background1.png</file>
+    </qresource>
+    <qresource prefix="/soundeffects">
+        <file>shot1-1.wav</file>
+        <file>8bitboom1-1.wav</file>
     </qresource>
 </RCC>

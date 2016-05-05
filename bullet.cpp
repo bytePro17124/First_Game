@@ -6,6 +6,7 @@
 #include <typeinfo>
 #include "game.h"
 #include "score.h"
+#include <QMediaPlayer>
 
 extern Game * game;
 
@@ -15,6 +16,7 @@ Bullet::Bullet(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
     setPixmap(QPixmap(":/images/bullet.png"));
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+
 
     timer->start(35);
 }
@@ -30,6 +32,19 @@ void Bullet::move()
             game->score->increase();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
+
+            deathsound = new QMediaPlayer();
+            deathsound->setMedia(QUrl("qrc:soundeffects/8bitboom1-1.wav"));
+            if (deathsound->state() == QMediaPlayer::StoppedState){
+                qDebug() << "attempted to play deathsound from stopped state" << deathsound->state() << deathsound->error() << deathsound->mediaStatus();
+                deathsound->play();
+            }
+            else
+            {
+                qDebug() << "attempted to play deathsound otherwise " << deathsound->state() << deathsound->error() << deathsound->mediaStatus();
+                deathsound->stop();
+            }
+
             delete colliding_items[i];
             delete this;
             return;
