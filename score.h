@@ -1,6 +1,7 @@
 #ifndef SCORE_H
 #define SCORE_H
 #include <QGraphicsTextItem>
+#include "health.h"
 
 
 class Score: public QGraphicsTextItem

@@ -7,6 +7,7 @@
 #include "game.h"
 #include "score.h"
 #include <QMediaPlayer>
+#include "health.h"
 
 extern Game * game;
 

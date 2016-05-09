@@ -16,7 +16,6 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
 
     player = new Player();
 
-
     scene->addItem(player);
 
     score = new Score();
@@ -38,7 +37,6 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
     QObject::connect(timer, SIGNAL(timeout()), player, SLOT(spawn()));
     timer->start(2000);
 
-
     QMediaPlaylist * bgmusiclist = new QMediaPlaylist;
     bgmusiclist->setPlaybackMode(QMediaPlaylist::Loop);
     bgmusiclist->addMedia(QUrl("qrc:bgmusic/PowerPunch_80-1.wav"));
@@ -46,7 +44,7 @@ Game::Game(QWidget *parent) : QGraphicsView(parent)
 
     QMediaPlayer * music = new QMediaPlayer();
     music->setPlaylist(bgmusiclist);
-    music->setVolume(90);
+    music->setVolume(88);
     music->play();
 
 }
