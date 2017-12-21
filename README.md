@@ -16,6 +16,6 @@ Open the project with Qt Creator and run it. (Ctrl+R)
 
 I followed a [tutorial](https://youtu.be/9lqhMLFHj3A?list=PLMgDVIa0Pg8WrI9WmZR09xAbfXyfkqKWy) to make this. I added some more custom stuff(sounds and graphics) and worked on it a bit more beyond the tutorial for fun. 
 
-All sounds were custom made by [Randy Blazer](xahydra@hotmail.com).
+All sounds were custom made by [Randy Blazer](mailto:xahydra@hotmail.com).
 
 All graphics were custom made by me.
